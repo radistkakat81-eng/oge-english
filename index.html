@@ -99,6 +99,9 @@ td { padding: 8px 4px; border-bottom: 1px solid var(--line); }
 td:last-child { text-align: right; }
 textarea { width: 100%; min-height: 90px; font: 14px monospace; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); padding: 10px; }
 .center { text-align: center; }
+.ru { font-style: italic; }
+.more { background: var(--card); border: 2px solid var(--line); border-radius: 16px; min-height: 56px; width: 100%; font-size: 19px; margin-top: 6px; }
+.explain { white-space: pre-line; background: var(--card); border-radius: 16px; padding: 14px 16px; margin-top: 10px; font-size: 18px; }
 .huge { font-size: 64px; margin: 10px 0 0; }
 @media (max-width: 480px) { .stats { grid-template-columns: 1fr 1fr; } .q { font-size: 22px; } }
 </style>
@@ -106,6 +109,7 @@ textarea { width: 100%; min-height: 90px; font: 14px monospace; border-radius: 1
 <body>
 <main id="app"></main>
 <script src="tasks.js"></script>
+<script src="explain.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

@@ -208,9 +208,16 @@ function answer(item, given, isRetry, btn) {
   const head = ok ? '✅ Верно!' : res === 'almost' ? '🟡 Почти! Проверь буквы' : '❌ Не совсем';
   const right = ok ? '' : `<p>Правильно: <b>${esc(item.a.join(' / '))}</b>${item.type === 'input' ? ` · ты написала: ${esc(given.trim())}` : ''}</p>`;
   const fb = document.getElementById('fb');
-  fb.innerHTML = `<div class="fb ${ok ? 'ok' : res === 'almost' ? 'almost' : 'bad'}"><b class="big">${head}</b>${right}<p>${esc(item.ex)}</p>
-    ${!ok && !isRetry ? '<p class="muted">Это задание вернётся чуть позже — и ещё раз через день.</p>' : ''}</div>
+  const ru = RU[item.q];
+  fb.innerHTML = `<div class="fb ${ok ? 'ok' : res === 'almost' ? 'almost' : 'bad'}"><b class="big">${head}</b>${right}
+    ${ru ? `<p class="ru">Перевод: ${esc(ru)}</p>` : ''}<p>${esc(item.ex)}</p>
+    ${!ok && !isRetry ? '<p class="muted">Это задание вернётся чуть позже — и ещё раз через день.</p>' : ''}
+    <button class="more" id="why">🤔 Не понятно — объясни подробнее</button><div id="whyText"></div></div>
     <button class="btn" id="next">Дальше →</button>`;
+  document.getElementById('why').onclick = () => {
+    document.getElementById('why').remove();
+    document.getElementById('whyText').innerHTML = `<div class="explain"><b>${esc(topicById[item.topic].name)} — объясняю по шагам</b>\n\n${esc(EXPLAIN[item.topic])}</div>`;
+  };
   const next = document.getElementById('next');
   next.onclick = nextQuestion;
   next.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -296,7 +303,7 @@ function renderRule(tid) {
   const t = topicById[tid];
   app.innerHTML = `<div class="top"><button class="back" id="b">← Темы</button></div>
     <h1>${esc(t.name)}</h1>
-    <div class="card rule">${esc(t.rule)}</div>
+    <div class="card rule">${esc(EXPLAIN[tid] || t.rule)}</div>
     <button class="btn" id="go">Потренироваться (10 заданий)</button>`;
   document.getElementById('b').onclick = renderTopics;
   document.getElementById('go').onclick = () => startTopic(tid);
