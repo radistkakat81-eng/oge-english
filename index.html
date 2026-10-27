@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Английский ОГЭ</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ОГЭ English">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#2f6f5e">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root {
+  --bg: #f6f3ec; --card: #ffffff; --ink: #1f2a27; --muted: #6b746f;
+  --accent: #2f6f5e; --accent-ink: #ffffff; --soft: #e4eee9;
+  --ok: #2e8b57; --ok-bg: #e3f4ea; --bad: #c0392b; --bad-bg: #fbe7e4;
+  --line: #e2ddd2; --warn-bg: #fff4d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161b19; --card: #212826; --ink: #eef2ef; --muted: #9aa5a0;
+    --accent: #5fb39a; --accent-ink: #0d1412; --soft: #2a3632;
+    --ok: #6fd39b; --ok-bg: #1f3a2b; --bad: #ff8a7a; --bad-bg: #3d2420;
+    --line: #34403c; --warn-bg: #3a3420;
+  }
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body {
+  font: 19px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 24px);
+}
+main { max-width: 760px; margin: 0 auto; }
+h1 { font-size: 30px; margin: 22px 0 6px; }
+h2 { font-size: 24px; margin: 22px 0 10px; }
+p { margin: 8px 0; }
+.muted { color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; margin: 14px 0; }
+button { font: inherit; color: inherit; cursor: pointer; border: none; }
+.btn {
+  display: block; width: 100%; min-height: 64px; padding: 14px 20px; margin: 12px 0;
+  border-radius: 18px; background: var(--accent); color: var(--accent-ink);
+  font-size: 21px; font-weight: 600; text-align: center;
+}
+.btn.soft { background: var(--soft); color: var(--ink); }
+.btn small { display: block; font-weight: 400; font-size: 15px; opacity: .85; }
+.btn:active, .opt:active, .topic:active { transform: scale(.98); }
+.row { display: flex; gap: 12px; }
+.row > * { flex: 1; }
+.top { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+.back { background: var(--soft); border-radius: 14px; min-height: 52px; min-width: 52px; padding: 0 18px; font-size: 18px; }
+.bar { flex: 1; height: 12px; background: var(--soft); border-radius: 8px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); border-radius: 8px; transition: width .3s; }
+.q { font-size: 25px; line-height: 1.5; margin: 6px 0 14px; }
+.gap { display: inline-block; min-width: 90px; border-bottom: 3px solid var(--accent); color: var(--accent); font-weight: 700; text-align: center; }
+.word { display: inline-block; background: var(--soft); border-radius: 12px; padding: 4px 14px; font-weight: 700; letter-spacing: .5px; font-size: 22px; }
+.tag { font-size: 15px; color: var(--muted); }
+input[type=text] {
+  width: 100%; font: inherit; font-size: 24px; padding: 16px 18px; border-radius: 16px;
+  border: 2px solid var(--line); background: var(--card); color: var(--ink); margin: 10px 0 0;
+}
+input[type=text]:focus { outline: none; border-color: var(--accent); }
+.opt {
+  display: block; width: 100%; min-height: 64px; margin: 10px 0; padding: 14px 18px; border-radius: 16px;
+  background: var(--card); border: 2px solid var(--line); font-size: 22px; text-align: left;
+}
+.opt.ok { border-color: var(--ok); background: var(--ok-bg); }
+.opt.bad { border-color: var(--bad); background: var(--bad-bg); }
+.fb { border-radius: 18px; padding: 16px 18px; margin: 14px 0; }
+.fb.ok { background: var(--ok-bg); }
+.fb.bad { background: var(--bad-bg); }
+.fb.almost { background: var(--warn-bg); }
+.fb b.big { font-size: 22px; display: block; margin-bottom: 4px; }
+.topic {
+  display: flex; align-items: center; gap: 14px; width: 100%; min-height: 72px; text-align: left;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 12px 16px; margin: 10px 0;
+}
+.topic .name { flex: 1; font-weight: 600; }
+.topic .name small { display: block; font-weight: 400; color: var(--muted); font-size: 15px; }
+.pill { font-size: 15px; border-radius: 10px; padding: 3px 10px; background: var(--soft); white-space: nowrap; }
+.pill.weak { background: var(--bad-bg); color: var(--bad); }
+.pill.good { background: var(--ok-bg); color: var(--ok); }
+.rule { white-space: pre-line; }
+.week { display: flex; align-items: flex-end; gap: 8px; height: 150px; margin: 10px 0 4px; }
+.week .d { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.week .col { width: 100%; max-width: 46px; background: var(--accent); border-radius: 8px 8px 4px 4px; min-height: 3px; }
+.week .col.empty { background: var(--soft); }
+.week .v { font-size: 14px; color: var(--muted); }
+.week .l { font-size: 14px; margin-top: 4px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat { background: var(--soft); border-radius: 16px; padding: 12px; text-align: center; }
+.stat b { display: block; font-size: 28px; }
+.stat span { font-size: 14px; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; font-size: 17px; }
+td { padding: 8px 4px; border-bottom: 1px solid var(--line); }
+td:last-child { text-align: right; }
+textarea { width: 100%; min-height: 90px; font: 14px monospace; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); padding: 10px; }
+.center { text-align: center; }
+.huge { font-size: 64px; margin: 10px 0 0; }
+@media (max-width: 480px) { .stats { grid-template-columns: 1fr 1fr; } .q { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script src="tasks.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
