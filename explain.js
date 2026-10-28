@@ -87,11 +87,17 @@ has — для he / she / it, have — для остальных.
 • The castle ___ (build). Замок сам строил? Нет, его построили → пассив.
 • Tom ___ (build) a house. Том сам строил? Да → обычное время.
 
-Строим: be (в нужном времени) + 3-я форма глагола
-• Сейчас / обычно: is / are + 3-я форма — English is spoken (на английском говорят). Cars are made (машины делают).
-• В прошлом: was / were + 3-я форма — The castle was built (замок был построен). The letters were sent.
-• Уже сделано: has / have been + 3-я форма — The windows have been cleaned (окна помыли).
-• В будущем: will be + 3-я форма — The bridge will be opened (мост откроют).
+Строим в 3 шага:
+1) Найди подсказку времени (every day, yesterday, tomorrow, already…).
+2) Поставь to be в это время.
+3) Добавь 3-ю форму глагола (V3, Past Participle): build → built, speak → spoken, send → sent, clean → cleaned.
+
+Какой to be в каком времени:
+• Present Simple (обычно, сейчас вообще): am / is / are + V3 — English is spoken (на английском говорят). Cars are made (машины делают).
+• Past Simple (в прошлом): was / were + V3 — The castle was built (замок был построен). The letters were sent.
+• Future Simple (в будущем): will be + V3 — The bridge will be opened (мост откроют).
+• Present Perfect (уже сделано, результат сейчас): has / have been + V3 — The windows have been cleaned (окна помыли).
+• Present Continuous (прямо сейчас в процессе): am / is / are being + V3 — The room is being cleaned (комнату сейчас убирают). В ОГЭ встречается редко.
 
 Подсказка: часто есть by — «кем»: written by Rowling (написан Роулинг).`,
 

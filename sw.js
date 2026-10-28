@@ -1,5 +1,5 @@
 // Работа без интернета: файлы тренажёра хранятся в кэше устройства.
-const CACHE = 'oge-english-v2';
+const CACHE = 'oge-english-v3';
 const FILES = ['./', 'index.html', 'app.js', 'tasks.js', 'explain.js', 'manifest.webmanifest', 'icon-180.png', 'icon-512.png'];
 
 self.addEventListener('install', e => {
